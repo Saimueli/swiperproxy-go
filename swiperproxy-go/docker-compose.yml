@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  swiperproxy:
+    image: docker.io/swiperproxy-go:latest
+    build:
+      context: .
+      dockerfile: Containerfile
+    container_name: swiperproxy
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Europe/Bratislava
+    volumes:
+      - ./configs/config.yaml:/root/configs/config.yaml:ro
+    restart: unless-stopped

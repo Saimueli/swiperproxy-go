@@ -1,0 +1,38 @@
+server:
+  host: "0.0.0.0"
+  port: "8080"
+  read_timeout: 10s
+  write_timeout: 10s
+  idle_timeout: 120s
+
+proxy:
+  target: "https://httpbin.org"
+  timeout: 30s
+  max_redirects: 5
+
+cache:
+  enabled: true
+  type: "memory"
+  max_size: 100
+  ttl: 300
+  redis_url: "redis://localhost:6379"
+
+rate_limit:
+  enabled: false
+  requests_per_second: 100
+  burst: 50
+  cleanup_interval: 60
+
+security:
+  enable_headers: true
+  enable_cors: false
+  allowed_origins:
+    - "*"
+
+logging:
+  level: "info"
+  format: "json"
+  output: "stdout"
+  file: "/var/log/swiperproxy.log"
+  max_size: 100
+  max_backups: 5
