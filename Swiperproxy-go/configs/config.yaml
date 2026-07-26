@@ -1,0 +1,10 @@
+server:
+  listen: ":8080"
+proxy:
+  timeout: 10s
+cache:
+  ttl: 5m
+  max_entries: 500
+rate_limit:
+  requests: 10
+  window: 1m
