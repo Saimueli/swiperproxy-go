@@ -1,4 +1,4 @@
-# Swiperproxy-go
+# Swiperproxy-go v1.01
 
 A lightweight, caching forward HTTP proxy written in Go. Inspired by [Swiperproxy](https://github.com/pgodschalk/swiperproxy) by pgodschalk.
 
